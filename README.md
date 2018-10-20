@@ -9,7 +9,7 @@
 # Caution
 
  - spaces in input expressions will be remove while processing.
- - each expression will be converted into (expression) while processing to avoid empty stack problems.
+ - each expression will be converted into (expression) before processing to avoid empty stack problems.
 
 # Installation
 
