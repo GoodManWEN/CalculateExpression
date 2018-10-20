@@ -39,7 +39,7 @@ You can custom your own operator sets ,default ones like this:
 
 You can check operate rules like this
 
-    print(standard.rule)
+    print( standard.rule )
 
 Try a simple calculate
 
