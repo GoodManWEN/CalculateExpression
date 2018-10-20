@@ -144,8 +144,5 @@ class Calculator(object):
 		# calculate
 		return self.calculate_postexp(post_exp)
 
-def main():
-	print('test')
-
 if __name__ == '__main__':
 	pass
