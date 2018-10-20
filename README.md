@@ -52,7 +52,7 @@ Algebra is supported
 Once introduced ,algebras will be stored in whose object's attribute as a dictionary
 It will remain until it's updated.
 
-    print( standard.calculate('' ,a = 1 ,b = 2 ,c = 3 ,d = 4 ,e = 1.6) ) # only update params
+    print( standard.calculate('' ,a = 1 ,b = 2 ,c = 3 ,d = 4 ,e = 1.6) ) # update params only 
     print( standard.calculate('d ** 4 / e') )
     print( standard.calculate('d ** 4 / e' ,e = 0.16) )
 
