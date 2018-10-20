@@ -43,17 +43,17 @@ You can check operate rules like this
 
 Try a simple calculate
 
-    print( standard('1 + 2 * 3') )
+    print( standard.calculate('1 + 2 * 3') )
 
 Algebra is supported
 
-    print( standard('a + b * c' ,a = 1 ,b = 2 ,c = 3) )
+    print( standard.calculate('a + b * c' ,a = 1 ,b = 2 ,c = 3) )
 
 Once introduced ,algebras will be stored in whose object's attribute as a dictionary
 It will remain until it's updated.
 
-    print( standard('' ,a = 1 ,b = 2 ,c = 3 ,d = 4 ,e = 1.6) )
-    print( standard('d ** 4 / e') )
-    print( standard('d ** 4 / e' ,e = 0.16) )
+    print( standard.calculate('' ,a = 1 ,b = 2 ,c = 3 ,d = 4 ,e = 1.6) ) # only update params
+    print( standard.calculate('d ** 4 / e') )
+    print( standard.calculate('d ** 4 / e' ,e = 0.16) )
 
 Have fun.
