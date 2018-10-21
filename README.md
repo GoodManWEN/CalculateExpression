@@ -1,5 +1,5 @@
 # Calculate Expression
-### A simple calculator dealing with expressions in string type ,using stack.
+### A simple calculator dealing with expressions in string type ,using stack data structure.
 
 # Features
 
