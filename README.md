@@ -47,10 +47,10 @@ Thus you can easily modify it.
     > defalut_regularization_function = lambda x:x.replace('**','^').replace('\\','/')
     > 
     > rules = { '+' : (0, 'lambda x,y:x+y') ,
-    > 		        '-' : (0, 'lambda x,y:x-y') ,
-    >         		'*' : (1, 'lambda x,y:x*y') ,
-    >         		'/' : (1, 'lambda x,y:x/y') ,
-    > 	        	'^' : (2, 'lambda x,y:x**y') }
+    >           '-' : (0, 'lambda x,y:x-y') ,
+    >           '*' : (1, 'lambda x,y:x*y') ,
+    >           '/' : (1, 'lambda x,y:x/y') ,
+    >           '^' : (2, 'lambda x,y:x**y') }
     >
 
 Try a simple calculate
