@@ -22,10 +22,10 @@ class Calculator(object):
 
 		self.args = {}
 		self.rules = rules if rules != None else { '+' : (0 ,'lambda x,y:x+y') ,
-												 '-' : (0 ,'lambda x,y:x-y') ,
-												 '*' : (1 ,'lambda x,y:x*y') ,
-												 '/' : (1 ,'lambda x,y:x/y') , 
-												 '^' : (2 ,'lambda x,y:x**y') }
+							   '-' : (0 ,'lambda x,y:x-y') ,
+							   '*' : (1 ,'lambda x,y:x*y') ,
+							   '/' : (1 ,'lambda x,y:x/y') , 
+							   '^' : (2 ,'lambda x,y:x**y') }
 		self.regularization_default = "lambda x:x.replace('**','^').replace('\\\\','/')"
 		try:
 			self.regularization = regularization if regularization != None else eval(self.regularization_default)
@@ -130,7 +130,7 @@ class Calculator(object):
 			else:
 				stack.append(elem)
 
-		return stack[0]
+		return int(stack[0]) if int(stack[0]) == float(stack[0]) else float(stack[0])
 
 	def calculate(self,exp,**args):
 
@@ -139,7 +139,7 @@ class Calculator(object):
 		# self.args = iargs
 		self.args.update(args)
 		if exp == '':
-			return 'arguments was updated'
+			return None
 
 		# post processing
 		post_exp = list(map(self.post_process,self.mid2post(exp)))
