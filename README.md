@@ -57,17 +57,22 @@ Thus you can easily modify it.
 
 Try a simple calculate
 
-    print( standard.calculate('1 + 2 * 3') )
+    > print( standard.calculate('1 + 2 * 3') )
+    > 7
 
 Algebra is supported
 
-    print( standard.calculate('a + b * c' ,a = 1 ,b = 2 ,c = 3) )
+    > print( standard.calculate('a + b * c' ,a = 1 ,b = 2 ,c = 3) )
+    > 7
 
 Once introduced ,algebras will be stored in whose object's attribute as a dictionary ,
 It will remain until it's updated.
 
-    print( standard.calculate('' ,a = 1 ,b = 2 ,c = 3 ,d = 4 ,e = 1.6) ) # update params only 
-    print( standard.calculate('d ** 4 / e') )
-    print( standard.calculate('d ** 4 / e' ,e = 0.16) )
+    > print( standard.calculate('' ,a = 1 ,b = 2 ,c = 3 ,d = 4 ,e = 1.6) ) # update params only 
+    > None
+    > print( standard.calculate('d ** 4 / e') )
+    > 160
+    > print( standard.calculate('d ** 4 / e' ,e = 0.1625) )
+    > 1575.3846153846152
 
 Have fun.
