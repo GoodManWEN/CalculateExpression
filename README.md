@@ -13,7 +13,7 @@
 
 # Installation
 
-    $ pip install calculate_expression
+    $ pip install calculate-expression
 
 #####   \* could only be installed on python3
 
