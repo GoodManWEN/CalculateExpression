@@ -15,7 +15,7 @@
 
     $ pip install calculate-expression
 
-#####   \* could only be installed on python3
+#####   \* since using f-string for formating ,could only be installed on python3.6+
 
 # Usage
 
