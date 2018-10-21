@@ -30,11 +30,13 @@ You can custom your own operator sets ,default ones like this:
     # "operator":(priority,'behavior')
     # behavior is string type ,thus we can easily check its logic
     # we will use eval() to convert it into function later
-    rule = { '+' : (0 ,'lambda x,y:x+y') ,
+    rules = { '+' : (0 ,'lambda x,y:x+y') ,
              '-' : (0 ,'lambda x,y:x-y') ,
              '*' : (1 ,'lambda x,y:x*y') ,
              '/' : (1 ,'lambda x,y:x/y') , 
              '^' : (2 ,'lambda x,y:x**y') }
+    standard = ce.Calculator(rules)
+    
 
 #####   \* once new operator is added ,regularization function may need to be modified commensurately.
 #####   \* default regularization function: `lambda x:x.replace("**","^").replace('\\','/')`
