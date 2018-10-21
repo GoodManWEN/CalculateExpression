@@ -8,7 +8,7 @@
  
 # Caution
 
- - spaces in input expressions will be remove while processing.
+ - spaces in input expressions will be removed while processing.
  - each expression will be converted into (expression) before processing to avoid empty stack problems.
 
 # Installation
@@ -49,7 +49,7 @@ Algebra is supported
 
     print( standard.calculate('a + b * c' ,a = 1 ,b = 2 ,c = 3) )
 
-Once introduced ,algebras will be stored in whose object's attribute as a dictionary
+Once introduced ,algebras will be stored in whose object's attribute as a dictionary ,
 It will remain until it's updated.
 
     print( standard.calculate('' ,a = 1 ,b = 2 ,c = 3 ,d = 4 ,e = 1.6) ) # update params only 
