@@ -17,27 +17,37 @@ class Calculator(object):
 	print(standard.calculate('a + b * c' ,a=1 ,b=2 ,c=3))
 	"""
 	
-	def __init__(self, rule = None, regularization = None):
+	def __init__(self, rules = None, regularization = None):
 		super(Calculator, self).__init__()
 
 		self.args = {}
-		self.rules = rule if rule != None else { '+' : (0 ,lambda x,y:x+y) ,
-												'-' : (0 ,lambda x,y:x-y) ,
-												'*' : (1 ,lambda x,y:x*y) ,
-												'/' : (1 ,lambda x,y:x/y) , 
-												'^' : (2 ,lambda x,y:x**y) }
-		self.regularization = regularization[0] if regularization != None else lambda x:x.replace("**","^").replace('\\','/')
+		self.rules = rules if rules != None else { '+' : (0 ,'lambda x,y:x+y') ,
+												 '-' : (0 ,'lambda x,y:x-y') ,
+												 '*' : (1 ,'lambda x,y:x*y') ,
+												 '/' : (1 ,'lambda x,y:x/y') , 
+												 '^' : (2 ,'lambda x,y:x**y') }
+		self.regularization_default = "lambda x:x.replace('**','^').replace('\\\\','/')"
 		try:
+			self.regularization = regularization if regularization != None else eval(self.regularization_default)
 			opets ,prios ,funcs = [],[],[]
 			for item in self.rules.items():
 				opets.append(item[0])
 				prios.append(item[1][0])
-				funcs.append(item[1][1])
+				funcs.append(eval(item[1][1]))
 			self.priority_map = dict(tuple(zip(opets,prios)))
 			self.behaviours = dict(tuple(zip(opets,funcs)))
 			self.priority_map.update({'(':-1,')':-1})
 		except Exception as e:
-			raise TypeError(f"initialize process supports dictionary type input refering label set & operation set. ErrorMessage: {e}")
+			raise TypeError(f"initialize process supports dictionary type input refering label set & operation set. ErrorMessage: {e}. Try input nothing and print(object.info()) to see defalut information")
+
+	# print rules and reg_func in format
+	def printinfo(self):
+		print(f"\ndefalut_regularization_function = {self.regularization_default}\n")
+		for i,item in enumerate(self.rules.items()):
+			print("rules = {0} {1} : {2}".format('{',repr(item[0]),item[1]) if i == 0 else f",\n\t\t{repr(item[0])} : {item[1]}",end='')
+		else:
+			print(' }\n')
+
 
 	def mid2post(self,expr): 
 
