@@ -27,10 +27,10 @@ class Calculator(object):
 
 		self.args = {}
 		self.rules = rules if rules != None else { '+' : (0 ,'lambda x,y:x+y') ,
-												 '-' : (0 ,'lambda x,y:x-y') ,
-												 '*' : (1 ,'lambda x,y:x*y') ,
-												 '/' : (1 ,'lambda x,y:x/y') , 
-												 '^' : (2 ,'lambda x,y:x**y') }
+							   '-' : (0 ,'lambda x,y:x-y') ,
+							   '*' : (1 ,'lambda x,y:x*y') ,
+							   '/' : (1 ,'lambda x,y:x/y') , 
+							   '^' : (2 ,'lambda x,y:x**y') }
 		self.regularization_default = "lambda x:x.replace('**','^').replace('\\\\','/')"
 		try:
 			self.regularization = regularization if regularization != None else eval(self.regularization_default)
